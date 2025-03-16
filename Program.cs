@@ -428,6 +428,62 @@
         } while (choice != 4);
 
       //------------------------------------------------------------------------------------------------
+
+        //4.Factorial of a Number
+        
+        Console.Write("Enter a non-negative integer: ");
+
+        
+
+        
+
+        bool isValidInput = int.TryParse(Console.ReadLine(), out int number);
+
+
+
+        if (!isValidInput || number < 0)
+
+        {
+
+            Console.WriteLine("Invalid input! Please enter a non-negative integer.");
+
+        }
+
+        else
+
+        {
+
+            long factorial = CalculateFactorial(number);
+
+            Console.WriteLine($"Factorial of {number} is: {factorial}");
+
+        }
+
+    }
+
+
+
+    static long CalculateFactorial(int n)
+
+    {
+
+        long result = 1;
+
+        
+
+        for (int i = 1; i <= n; i++)
+
+        {
+
+            result *= i; 
+
+        }
+
+        
+
+        return result;
+
+    }
     }
 }
 
