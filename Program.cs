@@ -179,6 +179,82 @@
 
             } while (choice == 'Y' || choice == 'y');
             Console.WriteLine("\nSee You Next Time");
+
+   //-------------------------------------------------------------------------------------
+
+        //2.Basic ATM System
+        double balance = 1000;
+        int choice;
+
+        do
+        {
+            // Display menu options
+            Console.WriteLine("\n==== Banking System ====");
+            Console.WriteLine("1. Withdraw Money");
+            Console.WriteLine("2. Deposit Money");
+            Console.WriteLine("3. Check Balance");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+            
+            
+            bool isValidInput = int.TryParse(Console.ReadLine(), out choice);
+
+            if (!isValidInput)
+            {
+                Console.WriteLine("Invalid input! Please enter a number between 1 and 4.");
+                continue;
+            }
+
+            switch (choice)
+            {
+                case 1: // Withdraw Money
+                    Console.Write("Enter amount to withdraw: $");
+                    bool isValidWithdraw = double.TryParse(Console.ReadLine(), out double withdrawAmount);
+
+                    if (!isValidWithdraw || withdrawAmount <= 0)
+                    {
+                        Console.WriteLine("Invalid amount! Please enter a positive number.");
+                    }
+                    else if (withdrawAmount > balance)
+                    {
+                        Console.WriteLine("Insufficient funds! Withdrawal denied.");
+                    }
+                    else
+                    {
+                        balance -= withdrawAmount;
+                        Console.WriteLine($"Withdrawal successful! New balance: ${balance}");
+                    }
+                    break;
+
+                case 2: // Deposit Money
+                    Console.Write("Enter amount to deposit: $");
+                    bool isValidDeposit = double.TryParse(Console.ReadLine(), out double depositAmount);
+
+                    if (!isValidDeposit || depositAmount <= 0)
+                    {
+                        Console.WriteLine("Invalid amount! Please enter a positive number.");
+                    }
+                    else
+                    {
+                        balance += depositAmount;
+                        Console.WriteLine($"Deposit successful! New balance: ${balance}");
+                    }
+                    break;
+
+                case 3: // Check Balance
+                    Console.WriteLine($"Current balance: ${balance}");
+                    break;
+
+                case 4: // Exit
+                    Console.WriteLine("Thank you for using our banking system.");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid choice! Please select a valid option");
+                    break;
+            }
+
+        } while (choice != 4);
         }
 
         //-------------------------------------------------------------------
