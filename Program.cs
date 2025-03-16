@@ -258,6 +258,176 @@
         }
 
         //-------------------------------------------------------------------
+
+        //3.Geometry Calculator
+        
+        int choice;
+
+        do
+
+        {
+
+            // Display menu
+
+            Console.WriteLine("\n==== Geometry Calculator ====");
+
+            Console.WriteLine("1. Circle (Area & Circumference)");
+
+            Console.WriteLine("2. Square (Area & Perimeter)");
+
+            Console.WriteLine("3. Triangle (Area)");
+
+            Console.WriteLine("4. Exit");
+
+            Console.Write("Enter your choice: ");
+
+
+
+            
+
+            bool isValidInput = int.TryParse(Console.ReadLine(), out choice);
+
+
+
+            if (!isValidInput)
+
+            {
+
+                Console.WriteLine("Invalid input! Enter a number between 1 and 4.");
+
+                continue;
+
+            }
+
+
+
+            switch (choice)
+
+            {
+
+                case 1: 
+
+                    Console.Write("Enter the radius of the circle: ");
+
+                    bool isValidRadius = double.TryParse(Console.ReadLine(), out double radius);
+
+
+
+                    if (!isValidRadius || radius <= 0)
+
+                    {
+
+                        Console.WriteLine("Invalid radius! Please enter a positive number.");
+
+                    }
+
+                    else
+
+                    {
+
+                        double area = Math.PI * radius * radius;
+
+                        double circumference = 2 * Math.PI * radius;
+
+                        Console.WriteLine($"Circle Area: {area:F2}");
+
+                        Console.WriteLine($"Circle Circumference: {circumference:F2}");
+
+                    }
+
+                    break;
+
+
+
+                case 2: 
+
+                    Console.Write("Enter the side length of the square: ");
+
+                    bool isValidSide = double.TryParse(Console.ReadLine(), out double side);
+
+
+
+                    if (!isValidSide || side <= 0)
+
+                    {
+
+                        Console.WriteLine("Invalid side length! Please enter a positive number.");
+
+                    }
+
+                    else
+
+                    {
+
+                        double area = side * side;
+
+                        double perimeter = 4 * side;
+
+                        Console.WriteLine($"Square Area: {area:F2}");
+
+                        Console.WriteLine($"Square Perimeter: {perimeter:F2}");
+
+                    }
+
+                    break;
+
+
+
+                case 3: 
+
+                    Console.Write("Enter the base of the triangle: ");
+
+                    bool isValidBase = double.TryParse(Console.ReadLine(), out double baseLength);
+
+                    Console.Write("Enter the height of the triangle: ");
+
+                    bool isValidHeight = double.TryParse(Console.ReadLine(), out double height);
+
+
+
+                    if (!isValidBase || baseLength <= 0 || !isValidHeight || height <= 0)
+
+                    {
+
+                        Console.WriteLine("Invalid input! Base and height must be positive numbers.");
+
+                    }
+
+                    else
+
+                    {
+
+                        double area = 0.5 * baseLength * height;
+
+                        Console.WriteLine($"Triangle Area: {area:F2}");
+
+                    }
+
+                    break;
+
+
+
+                case 4: 
+
+                    Console.WriteLine("Thank you for using the Geometry Calculator \nGoodbye");
+
+                    break;
+
+
+
+                default:
+
+                    Console.WriteLine("Invalid choice! Please select a valid option");
+
+                    break;
+
+            }
+
+
+
+        } while (choice != 4);
+
+      //------------------------------------------------------------------------------------------------
     }
 }
 
