@@ -120,68 +120,169 @@
             //---------------------------------------------(CSharpPart2Exercises)
 
             //1. Simple Calculator (Switch Case)
-            char choice;
-            do
+            //char choice;
+            //do
+            //{
+            //    Console.Clear();
+            //    int OperationNumber, num1, num2;
+            //    Console.WriteLine("Enter The Operation Number:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
+
+            //    OperationNumber = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("Enter First Number: ");
+            //    num1 = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("Enter Second Number: ");
+            //    num2 = int.Parse(Console.ReadLine());
+
+            //    double result = 0;
+            //    bool isActive = false;
+            //    switch (OperationNumber)
+            //    {
+            //        case 1:
+            //            result = num1 + num2;
+            //            break;
+
+            //        case 2:
+            //            result = num1 - num2;
+            //            break;
+
+            //        case 3:
+            //            result = num1 * num2;
+            //            break;
+
+            //        case 4:
+            //            if (num2 == 0)
+            //            {
+            //                Console.WriteLine("Division by Zero is not allowed");
+            //                isActive = true;
+            //            }
+
+            //            else
+            //            {
+            //                result = num1 / num2;
+
+            //            }
+            //            break;
+
+            //        default:
+            //            Console.WriteLine("Wrong Choice");
+            //            break;
+
+            //    }
+            //    if (!isActive)
+            //    {
+            //        Console.WriteLine(result);
+            //    }
+            //    Console.WriteLine("Do you want another Operation? Y / N");
+            //    choice = Console.ReadKey().KeyChar;
+
+
+
+            //} while (choice == 'Y' || choice == 'y');
+            //Console.WriteLine("\nSee You Next Time");
+
+
+            //-------------------------------------------------------------------
+            //2. Basic ATM System
+
+
+
+            float balance = 1000;
+            string userChoice;
+
+
+            while (true)
             {
-                Console.Clear();
-                int OperationNumber, num1, num2;
-                Console.WriteLine("Enter The Operation Number:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
 
-                OperationNumber = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter First Number: ");
-                num1 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter Second Number: ");
-                num2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("\nATM Menu:");
+                Console.WriteLine("1. Withdraw Money");
+                Console.WriteLine("2. Deposit Money");
+                Console.WriteLine("3. Check Balance");
+                Console.WriteLine("4. Exit");
 
-                double result = 0;
-                bool isActive = false;
-                switch (OperationNumber)
+
+                Console.Write("choose an option: ");
+                userChoice = Console.ReadLine();
+
+
+                switch (userChoice)
                 {
-                    case 1:
-                        result = num1 + num2;
-                        break;
+                    case "1":
+                    Console.Write("Enter the amount to withdraw: ");
+                    float withdrawAmount = float.Parse(Console.ReadLine());
 
-                    case 2:
-                        result = num1 - num2;
-                        break;
+                    if (withdrawAmount > balance)
+                    {
+                        Console.WriteLine("Insufficient funds Withdrawal failed.");
+                    }
+                    else
+                    {
+                        balance -= withdrawAmount;
+                        Console.WriteLine($"You withdrew {withdrawAmount}$. Your new balance is {balance}$");
+                    }
+                    break;
 
-                    case 3:
-                        result = num1 * num2;
-                        break;
 
-                    case 4:
-                        if (num2 == 0)
-                        {
-                            Console.WriteLine("Division by Zero is not allowed");
-                            isActive = true;
-                        }
 
-                        else
-                        {
-                            result = num1 / num2;
 
-                        }
-                        break;
 
-                    default:
-                        Console.WriteLine("Wrong Choice");
-                        break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 }
-                if (!isActive)
-                {
-                    Console.WriteLine(result);
-                }
-                Console.WriteLine("Do you want another Operation? Y / N");
-                choice = Console.ReadKey().KeyChar;
-
-
-
-            } while (choice == 'Y' || choice == 'y');
-            Console.WriteLine("\nSee You Next Time");
-        }
-
-        //-------------------------------------------------------------------
     }
 }
-
+                 
+               
