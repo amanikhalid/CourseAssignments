@@ -22,7 +22,7 @@
             }
             //-----------------------------------------------------------
 
-          //  2.Largest of Three Numbers
+            //  2.Largest of Three Numbers
             int numb1, num2, num3, large;
             Console.WriteLine("Enter First Number:");
             numb1 = int.Parse(Console.ReadLine());
@@ -46,7 +46,7 @@
             Console.WriteLine("The Largest Number is " + large);
             //--------------------------------------------------------------
 
-           // 3.Temperature Converter
+            // 3.Temperature Converter
             double temp, Fahrenheit;
             Console.WriteLine("Enter Temperature in Celsius");
             double Celsius = double.Parse(Console.ReadLine());
@@ -56,7 +56,7 @@
 
             //----------------------------------------------------------------
 
-           // 4.Simple Discount Calculator
+            // 4.Simple Discount Calculator
             float Price, FinalPrice, Discount;
             Console.WriteLine("Enter The Price");
             Price = float.Parse(Console.ReadLine());
@@ -76,7 +76,7 @@
 
             //-----------------------------------------------------------------
 
-           // 5.Grading System
+            // 5.Grading System
             float StudentMark;
             Console.WriteLine("Enter Your Score");
             StudentMark = float.Parse(Console.ReadLine());
@@ -104,7 +104,7 @@
 
             //---------------------------------------------------------------
 
-           // 6.Swap Two Numbers
+            // 6.Swap Two Numbers
             int a, b, c;
             Console.WriteLine("Enter First Number");
             a = int.Parse(Console.ReadLine());
@@ -119,7 +119,7 @@
 
             //---------------------------------------------(CSharpPart2Exercises)
 
-           // 1.Simple Calculator(Switch Case)
+            // 1.Simple Calculator(Switch Case)
             char choice;
             do
             {
@@ -183,7 +183,55 @@
 
             //-------------------------------------------------------------------
 
+            //2. Basic ATM System
 
+
+            double balance = 1000;
+            double withdraw, deposit;
+            Console.WriteLine("\n==== Banking System ====");
+            Console.WriteLine("1. Withdraw Money");
+            Console.WriteLine("2. Deposit Money");
+            Console.WriteLine("3. Check Balance");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+            int input = int.Parse(Console.ReadLine());
+
+            switch (input)
+            {
+                case 1:
+                    if (balance == 0)
+                    {
+                        Console.WriteLine("Your Balance " + balance + "  is not Valid to withdraw");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter amount to withdraw\n");
+                        withdraw = double.Parse(Console.ReadLine());
+                        withdraw = balance - withdraw;
+                        Console.WriteLine("Your Balance is " + balance);
+                    }
+                    break;
+                case 2:
+                    {
+                        Console.WriteLine("Enter amount to deposit");
+                        deposit = double.Parse(Console.ReadLine());
+                        deposit = balance + deposit;
+                        Console.WriteLine("Your Balance is " + balance);
+                    }
+                    break;
+
+                case 3:
+                    {
+                        Console.WriteLine("Your Balance is " + balance);
+                    }
+                    break;
+                case 4:
+                    {
+                        Environment.Exit(0);
+                    }
+                    break;
+            }
         }
     }
 }
