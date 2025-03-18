@@ -280,6 +280,28 @@
 
                     Console.WriteLine($"Sum of Even: {SumEven}, Sum of Odd: {SumOdd}");
 
+                    //---------------------------------------------------------
+                    //6. Scientific Calculator (Switch-Case & Math Functions)
+                    Console.Write("Choose an operation \n(sin, cos, tan, sqrt, log, pow): ");
+                    string operation = Console.ReadLine();
+                    Console.Write("Enter Number: ");
+                    double number = double.Parse(Console.ReadLine());
+
+                    switch (operation)
+                    {
+                        case "sin": Console.WriteLine($"Result: {Math.Sin(number)}"); break;
+                        case "cos": Console.WriteLine($"Result: {Math.Cos(number)}"); break;
+                        case "tan": Console.WriteLine($"Result: {Math.Tan(number)}"); break;
+                        case "sqrt": Console.WriteLine($"Result: {Math.Sqrt(number)}"); break;
+                        case "log": Console.WriteLine($"Result: {Math.Log(number)}"); break;
+                        case "pow":
+                            Console.Write("Enter an exponent: ");
+                            double exp = double.Parse(Console.ReadLine());
+                            Console.WriteLine($"Result: {Math.Pow(number, exp)}");
+                            break;
+                        default: Console.WriteLine("Operation is Invalid"); break;
+                    }
+                    //--------------------------------------------------------
 
 
 
@@ -314,8 +336,6 @@
 
 
             }
-            
-           
 
 
 
@@ -328,7 +348,9 @@
 
 
 
-            }
+
+
+        }
 
 
 
