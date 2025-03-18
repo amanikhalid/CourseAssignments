@@ -326,13 +326,13 @@
             //10. Guess Game with Helper
 
             Random rand = new Random();
-            int target = rand.Next(1, 100);
+            int target = rand.Next(1, 50);
 
             int guess;
 
             do
             {
-                Console.Write("Guess the number (1-100): ");
+                Console.Write("Guess the number (1-50): ");
                 guess = int.Parse(Console.ReadLine());
 
 
