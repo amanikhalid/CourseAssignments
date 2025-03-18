@@ -260,10 +260,23 @@
                 default:
                     Console.WriteLine("Invalid choice!");
                     break;
+                    //}
+                    //----------------------------------------------------------------
+                    //4. Factorial of a Number 
+                    Console.WriteLine("Enter a number");
+                    int N = int.Parse(Console.ReadLine());
+                    double fact = 1;
+                    for (int i = 1; i <= N; i++) fact *= i;
+                    Console.WriteLine($"Factorial: {fact}");
+
+                    //----------------------------------------------------------------
             }
 
 
-        }
+
+
+                    
+            }
 
     }
 }
