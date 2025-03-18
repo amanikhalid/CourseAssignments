@@ -232,7 +232,39 @@
                     }
                     break;
             }
+            //--------------------------------------------------------------
+            //3. Geometry Calculator
+            Console.WriteLine("Choose a Shape :\n1. Circle\n2. Square\n3.Triangle ");
+            int shape = int.Parse(Console.ReadLine());
+            double radius, SideLength, Tbase, height;
+            switch (shape)
+            {
+                case 1:
+                    Console.WriteLine("Enter Circle radius: ");
+                    radius = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Area: {Math.PI * radius * radius}, Circumference: {2 * Math.PI * radius}");
+
+                    break;
+                case 2:
+                    Console.Write("Enter Square side length: ");
+                    SideLength = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Area: {SideLength * SideLength}, Perimeter: {4 * SideLength}");
+                    break;
+                case 3:
+                    Console.Write("Enter Triangle base: ");
+                    Tbase = double.Parse(Console.ReadLine());
+                    Console.Write("Enter height: ");
+                    height = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Area: {0.5 * Tbase * height}");
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice!");
+                    break;
+            }
+
+
         }
+
     }
 }
 
