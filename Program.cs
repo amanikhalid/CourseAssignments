@@ -260,8 +260,8 @@
                 default:
                     Console.WriteLine("Invalid choice!");
                     break;
-                    //}
-                    //----------------------------------------------------------------
+
+                    //-------------------------------------------------
                     //4. Factorial of a Number 
                     Console.WriteLine("Enter a number");
                     int N = int.Parse(Console.ReadLine());
@@ -270,6 +270,64 @@
                     Console.WriteLine($"Factorial: {fact}");
 
                     //----------------------------------------------------------------
+                    //5. Sum of Even and Odd Numbers
+                    Console.Write("Enter Number: ");
+                    int n = int.Parse(Console.ReadLine());
+                    int SumEven = 0, SumOdd = 0;
+
+                    for (int i = 1; i <= n; i++)
+                        if (i % 2 == 0) SumEven += i; else SumOdd += i;
+
+                    Console.WriteLine($"Sum of Even: {SumEven}, Sum of Odd: {SumOdd}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+            
+           
+
+
+
+
+
+
+
+
+
+
+
+
             }
 
 
@@ -279,7 +337,7 @@
             }
 
     }
-}
+
 
 
 
