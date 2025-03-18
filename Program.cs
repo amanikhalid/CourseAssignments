@@ -261,83 +261,90 @@
                     Console.WriteLine("Invalid choice!");
                     break;
 
-                    //-------------------------------------------------
-                    //4. Factorial of a Number 
-                    Console.WriteLine("Enter a number");
-                    int N = int.Parse(Console.ReadLine());
-                    double fact = 1;
-                    for (int i = 1; i <= N; i++) fact *= i;
-                    Console.WriteLine($"Factorial: {fact}");
-
-                    //----------------------------------------------------------------
-                    //5. Sum of Even and Odd Numbers
-                    Console.Write("Enter Number: ");
-                    int n = int.Parse(Console.ReadLine());
-                    int SumEven = 0, SumOdd = 0;
-
-                    for (int i = 1; i <= n; i++)
-                        if (i % 2 == 0) SumEven += i; else SumOdd += i;
-
-                    Console.WriteLine($"Sum of Even: {SumEven}, Sum of Odd: {SumOdd}");
-
-                    //---------------------------------------------------------
-                    //6. Scientific Calculator (Switch-Case & Math Functions)
-                    Console.Write("Choose an operation \n(sin, cos, tan, sqrt, log, pow): ");
-                    string operation = Console.ReadLine();
-                    Console.Write("Enter Number: ");
-                    double number = double.Parse(Console.ReadLine());
-
-                    switch (operation)
-                    {
-                        case "sin": Console.WriteLine($"Result: {Math.Sin(number)}"); break;
-                        case "cos": Console.WriteLine($"Result: {Math.Cos(number)}"); break;
-                        case "tan": Console.WriteLine($"Result: {Math.Tan(number)}"); break;
-                        case "sqrt": Console.WriteLine($"Result: {Math.Sqrt(number)}"); break;
-                        case "log": Console.WriteLine($"Result: {Math.Log(number)}"); break;
-                        case "pow":
-                            Console.Write("Enter an exponent: ");
-                            double exp = double.Parse(Console.ReadLine());
-                            Console.WriteLine($"Result: {Math.Pow(number, exp)}");
-                            break;
-                        default: Console.WriteLine("Operation is Invalid"); break;
-                    }
-                    //--------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
 
+            //-------------------------------------------------
+            //4. Factorial of a Number 
+            Console.WriteLine("Enter a number");
+            int N = int.Parse(Console.ReadLine());
+            double fact = 1;
+            for (int i = 1; i <= N; i++) fact *= i;
+            Console.WriteLine($"Factorial: {fact}");
 
+            //----------------------------------------------------------------
+            //5. Sum of Even and Odd Numbers
+            Console.Write("Enter Number: ");
+            int n = int.Parse(Console.ReadLine());
+            int SumEven = 0, SumOdd = 0;
+
+            for (int i = 1; i <= n; i++)
+                if (i % 2 == 0) SumEven += i; else SumOdd += i;
+
+            Console.WriteLine($"Sum of Even: {SumEven}, Sum of Odd: {SumOdd}");
+
+            //---------------------------------------------------------
+            //6. Scientific Calculator (Switch-Case & Math Functions)
+            Console.Write("Choose an operation \n(sin, cos, tan, sqrt, log, pow): ");
+            string operation = Console.ReadLine();
+            Console.Write("Enter Number: ");
+            double number = double.Parse(Console.ReadLine());
+
+            switch (operation)
+            {
+                case "sin": Console.WriteLine($"Result: {Math.Sin(number)}"); break;
+                case "cos": Console.WriteLine($"Result: {Math.Cos(number)}"); break;
+                case "tan": Console.WriteLine($"Result: {Math.Tan(number)}"); break;
+                case "sqrt": Console.WriteLine($"Result: {Math.Sqrt(number)}"); break;
+                case "log": Console.WriteLine($"Result: {Math.Log(number)}"); break;
+                case "pow":
+                    Console.Write("Enter an exponent: ");
+                    double exp = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"Result: {Math.Pow(number, exp)}");
+                    break;
+                default: Console.WriteLine("Operation is Invalid"); break;
+            }
+            //------------------------------------------------------------
+
+
+            //7. Print Pattern (For Loop)
+            Console.Write("Enter N: ");
+            N = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= N; i++)
+                Console.WriteLine(new string('*', i));
+
+            //---------------------------------------------------------------
+            //8.Print a Pyramid Pattern (For Loop)
+            Console.Write("Enter N: ");
+            N = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= N; i++)
+                Console.WriteLine(new string(' ', N - i) + new string('*', 2 * i - 1));
+
+            //----------------------------------------------------------------
+            //9. Print a Diamond Pattern (For Loop)
+
+            //--------------------------------------------------------------
+            //10. Guess Game with Helper
+
+            Random rand = new Random();
+            int target = rand.Next(1, 100);
+
+            int guess;
+
+            do
+            {
+                Console.Write("Guess the number (1-100): ");
+                guess = int.Parse(Console.ReadLine());
+
+
+                if (guess > target)
+                    Console.WriteLine("Try Lower!");
+                else if (guess < target)
+                    Console.WriteLine("Try Higher!");
+                else
+                    Console.WriteLine("You Win!");
+
+
+            } while (guess != target);
 
 
 
@@ -355,8 +362,8 @@
 
 
 
-                    
-            }
+
+    }
 
     }
 
